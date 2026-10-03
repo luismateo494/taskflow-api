@@ -1,0 +1,144 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "TaskFlowApi",
+    "version": "1.0.0",
+    "description": ""
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/api/tasks/with-relations": {
+      "get": {
+        "summary": "http://localhost:3000/api/tasks/with-relations",
+        "responses": {}
+      }
+    },
+    "/api/teams/6abee37108a80d989efea000": {
+      "get": {
+        "summary": "http://localhost:3000/api/teams/6abee37108a80d989efea000",
+        "responses": {}
+      }
+    },
+    "/api/tasks": {
+      "post": {
+        "summary": "http://localhost:3000/api/tasks",
+        "responses": {},
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "priority": {
+                    "type": "string"
+                  },
+                  "team": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "assignedTo": {
+                    "type": "string"
+                  },
+                  "tags": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "sprint": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "title": "Implementar login con Google",
+                "status": "pending",
+                "priority": "High",
+                "team": "Frontend",
+                "email": "ana.torres@taskflow.com",
+                "assignedTo": "Ana Torres",
+                "tags": [
+                  "auth",
+                  "oauth"
+                ],
+                "sprint": "S3"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "http://localhost:3000/api/tasks",
+        "responses": {}
+      }
+    },
+    "/api/tasks/6aa4ab43cf0dba8558671b81": {
+      "put": {
+        "summary": "http://localhost:3000/api/tasks/6aa4ab43cf0dba8558671b81",
+        "responses": {},
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  },
+                  "priority": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "status": "in_progress",
+                "priority": "Critical"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tasks/6ac057982cefd870de111036": {
+      "delete": {
+        "summary": "http://localhost:3000/api/tasks/6ac057982cefd870de111036",
+        "responses": {}
+      },
+      "get": {
+        "summary": "http://localhost:3000/api/tasks/6ac057982cefd870de111036",
+        "responses": {}
+      }
+    },
+    "/api/tasks/stats/by-team": {
+      "get": {
+        "summary": "http://localhost:3000/api/tasks/stats/by-team",
+        "responses": {}
+      }
+    },
+    "/api/teams": {
+      "get": {
+        "summary": "http://localhost:3000/api/teams",
+        "responses": {}
+      }
+    },
+    "/api/users": {
+      "get": {
+        "summary": "http://localhost:3000/api/users",
+        "responses": {}
+      }
+    }
+  }
+}
